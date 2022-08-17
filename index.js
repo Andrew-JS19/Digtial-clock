@@ -1,30 +1,17 @@
-const hourEl = document.getElementById("hour");
-const minuteEl = document.getElementById("minutes");
-const secondEl = document.getElementById("seconds");
-const ampmEl = document.getElementById("ampm");
+const secondsHand = document.getElementById("seconds-hand");
+const minutesHand = document.getElementById("minutes-hand");
+const hoursHand = document.getElementById("hours-hand");
 
-function updateClock(){
-  let h = new Date().getHours();
-  let m = new Date().getMinutes();
-  let s = new Date().getSeconds();
-  let ampm = "AM";
+function getTime() {
+  const now = new Date();
+  const seconds = now.getSeconds();
+  const minutes = now.getMinutes();
+  const hours = now.getHours();
+  const timeInterval = 6;
 
-  if(h > 12){
-    h = h - 12;
-    ampm = "PM";
-  }
-
-  h = h < 10 ? "0" = h : h;
-  m = m < 10 ? "0" = m : m;
-  s = s < 10 ? "0" = s : s;
-
-  hourEl.innerText = h;
-  minuteEl.innerText = m;
-  secondEl.innerText = s;
-  ampmEl, (innerText = ampm);
-  setTimeout(()=>{
-updateClock()
-  },1000 )
+  secondsHand.style.transform = "rotate(" + seconds * timeInterval + 'deg)';
+  minutesHand.style.transform =    "rotate(" + (minutes * timeInterval + seconds / 10) + 'deg)';
+  hoursHand.style.transform = "rotate(" + (hours * 30 + minutes / 2) + 'deg)';
 }
 
-updateClock();
+setInterval(getTime, 100);
