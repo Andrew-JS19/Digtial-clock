@@ -1,59 +1,45 @@
-body {
-  margin: 0;
-  font-family: sans-serif;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  height: 100vh;
-  justify-content: center;
-  background: url("https://images.unsplash.com/photo-1520052205864-92d242b3a76b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1169&q=80");
-  background-size: cover;
-  overflow: hidden;
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: rgb(43,43,43);
+
 }
 
-h2 {
-  text-transform: uppercase;
-  letter-spacing: 4px;
-  font-size: 14px;
-  text-align: center;
-  color: rgb(198, 84, 233);
-  opacity: 0.8;
+.clock{
+    position: absolute;
+    height: 300px;
+    width: 300px;
+    border-radius: 150px;
+    border: solid 5px rgb(252,255,55);
 }
 
-.clock {
-  display: flex;
-}
-.clock div {
-  margin: 5px;
-  position: relative;
+#seconds-hand {
+    position: absolute;
+    height: 130px;
+    width: 2px;
+    background-color: rgb(70,255,255);
+    left: 149px;
+    bottom: 149px;
+    opacity: 50%;
+
 }
 
-.clock span {
-  width: 100px;
-  height: 80px;
-  background: slateblue;
-  opacity: 0.8;
-  color: white;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: 50px;
-  text-shadow: 2px 2px 4px rgb(0, 0, 0, 0.3);
+#minutes-hand {
+    height: 100px;
+    width: 20px;
+    background-color: rgb(253,120,227);
+    position: absolute;
+    left: 149px;
+    bottom: 149px;
 }
 
-.clock .text {
-  height: 30px;
-  font-size: 10px;
-  text-transform: uppercase;
-  letter-spacing: 2px;
-  background: darkblue;
-  opacity: 0.6;
-}
-.clock #ampm {
-  bottom: 0;
-  position: centre;
-  width: 60px;
-  height: 30px;
-  font-size: 20px;
-  background: rgb(214, 127, 236);
+#hours-hand {
+    height: 80px;
+    width: 4px;
+    background-color: rgb(205,112,255);
+    position: absolute;
+    left: 148px;
+    bottom: 148px;
 }
